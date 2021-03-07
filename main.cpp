@@ -36,7 +36,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), ip_addr("::"), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false), ipv4_proxy(NULL), ipv6_proxy(NULL) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Blocknet-seeder\n"
+    static const char *help = "Scalaris-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -418,11 +418,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed1.blocknet.co", "seed2.blocknet.co", "seed3.blocknet.co", ""};
-static const string testnet_seeds[] = {"3.16.3.126",
-                                       "18.224.130.185",
-                                       "18.213.44.27",
-                                       "34.196.102.239",
+static const string mainnet_seeds[] = {"seed1.scalaris.info", "seed2.scalaris.info", "seed3.scalalris.info", ""};
+static const string testnet_seeds[] = {"127.0.0.1",
                                        ""};
 static const string *seeds = mainnet_seeds;
 
@@ -448,7 +445,7 @@ int main(int argc, char **argv) {
   setbuf(stdout, NULL);
   CDnsSeedOpts opts;
   opts.ParseCommandLine(argc, argv);
-  printf("Blocknet DNS Seeder\n");
+  printf("Scalaris DNS Seeder\n");
   printf("Supporting whitelisted filters: ");
   for (std::set<uint64_t>::const_iterator it = opts.filter_whitelist.begin(); it != opts.filter_whitelist.end(); it++) {
       if (it != opts.filter_whitelist.begin()) {
