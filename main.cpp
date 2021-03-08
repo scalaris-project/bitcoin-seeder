@@ -418,7 +418,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"127.0.0.1", ""};
+static const string mainnet_seeds[] = {"seed.scalaris.info", "seed1.scalaris.info", "seed2.scalaris.ino", ""};
 static const string testnet_seeds[] = {"127.0.0.1",
                                        ""};
 static const string *seeds = mainnet_seeds;
